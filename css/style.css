@@ -11,8 +11,9 @@ main {
 
 .hero {
    display: grid;
-   grid-template-columns: 1fr 1fr;
+   grid-template-columns: minmax(300px, 2fr) 3fr;
    grid-auto-rows: 550px;
+   border-bottom: 1px solid rgb(139, 137, 137);
 }
 
 .hero__img {
@@ -69,7 +70,7 @@ main {
 .dishes__container {
    display: grid;
    /* indico que tendre 4 columnas de 1 fraccion + filas de 1 fraccion */
-   grid-template-columns: repeat(4, minmax(150px,200px));
+   grid-template-columns: repeat(auto-fit, minmax(75px,200px));
    /* agregar espaciado */
    grid-auto-rows: 1fr;
    gap:25px;
@@ -89,9 +90,6 @@ main {
 
 /* !SECCION HOME MENU */
 
-.menu {
-
-}
 
 .menu__title {
    font-size: 2rem;
@@ -103,7 +101,7 @@ main {
 
 .menu__grid {
    display: grid;
-   grid-template-columns: repeat(5, minmax(100px,250px));
+   grid-template-columns: repeat(auto-fit,150px );
    justify-content: center;
    gap: 25px;
 }
@@ -121,3 +119,20 @@ main {
    object-fit: contain;
 }
 
+/* ?RESPONSIVO */
+
+@media screen and (max-width: 768px) {
+   .hero{
+      grid-template-columns: minmax(300px,500px);
+      justify-content: center;
+   }
+
+   .hero__img {
+      display: none;
+   }
+
+   .dishes__container {
+      grid-template-columns: repeat(auto-fit, minmax(75px,100px));
+   }
+
+}
