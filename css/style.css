@@ -10,9 +10,40 @@ main {
 .hero {
    display: grid;
    grid-template-columns: 1fr 1fr;
+   grid-auto-rows: 400px;
 }
 
 .hero__img {
    width: 100%;
+   height: 100%;
    object-fit: contain;
+}
+
+.info {
+   align-self: center;
+}
+
+.info__title {
+   color: #333;
+   font-size: 3rem;
+   margin-bottom: 24px;
+   font-weight: bolder;
+}
+
+.info__subtitle {
+   color: #333;
+   font-size: 1.5rem;
+   margin-bottom: 24px;
+}
+
+
+.info__button {
+   padding: 12px 24px;
+   background-color: orange;
+
+   border: none;
+   border-radius: 15px;
+
+   color: #333;
+   font-weight: bolder;
 }
